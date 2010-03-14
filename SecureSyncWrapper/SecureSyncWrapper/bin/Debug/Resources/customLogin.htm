@@ -1,0 +1,323 @@
+﻿<html>
+<head>
+    <title>
+        SecureSync 5.2.0
+    </title>
+    <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <link href="https://www3.securesync.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+    <script language="javascript" src="https://www3.securesync.com/scripts/FormValidatorMoz.js" type="text/javascript"></script>
+
+    <script language="javascript" src="https://www3.securesync.com/scripts/SSIECommonMoz.js" type="text/javascript"></script>
+
+    <script language="javascript" src="https://www3.securesync.com/scripts/formsMoz.js" type="text/javascript"></script>
+
+    <script language="javascript" src="https://www3.securesync.com/scripts/strings.js" type="text/javascript"></script>
+
+    <script language="javascript">
+				
+			function initPage(){
+				if (document.getElementById('txtUserName'))
+			}
+
+			function prepForm(){
+				MonitorControl(document.getElementById('butSubmit'));
+				MonitorControl(document.getElementById('butClear'));
+			}
+			
+			function doSubmit(e) {
+				e = (e) ? e : event;
+				if (e.keyCode == 13) {
+						document.getElementById('butSubmit').click();
+				}  
+			}
+			
+    </script>
+
+    <link href="https://www3.securesync.com/CSS/HTML.css" rel="stylesheet" type="text/css" />
+    <link href="https://www3.securesync.com/CSS/HTML.css" rel="stylesheet" type="text/css" />
+</head>
+<body onkeydown="doSubmit(event);" onload="initPage();">
+    
+<link href="https://www3.securesync.com/CSS/HTML.css" type="text/css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<!-- Begin header -->
+<link href="https://www3.securesync.com/CSS/NoImageMenu.css" type="text/css" rel="stylesheet">
+<!-- 
+
+Top link bar
+
+-->
+
+<script language="javascript">
+
+    // Disable broswer back button.
+    // window.history.forward(1);
+
+   	function SwitchAccount(select_control){
+	    var sComfirmationMessage = new String('The customer selected uses a different version of SecureSync.  Accessing this customer will require you to login to this different version of SecureSync.  Select OK to proceed to the login page, otherwise select cancel.');
+		var sSelectedValue = select_control.options[select_control.selectedIndex].value;
+		//check to see if new account is on same web server
+	
+		if (sSelectedValue.charAt(0) == "Y") {
+			//Same web server so switch accounts
+			document.forms['frmAccountSwitch'].hidAccountSwitch.value=sSelectedValue; 
+			document.forms['frmAccountSwitch'].submit();
+		}
+		else //different web server so display prompt
+		{if (confirm(sComfirmationMessage)) {
+				//transfer to new web server
+				window.navigate("https://" + select_control.options[select_control.selectedIndex].server_name);
+			}
+			else
+			{
+			//canceled transfer so set dropdown list to previous value
+				select_control.selectedIndex = select_control.old_value;
+			}
+		}
+	}
+
+// KEEP ALIVE FUNCTIONALITY - START
+
+	// High-level user events that enable keepalive
+    document.onkeydown = header_KeepAlive;	
+    document.onclick = header_KeepAlive;	
+    
+    var doKeepAlive = false;  // default to false
+    
+	function header_KeepAlive(){	
+		doKeepAlive = true;  // enable keepalive functionality
+	}	
+	
+	function header_doKeepAlive(){
+		if (doKeepAlive==true) {
+		   // make server request to keep session active on server.
+    		var o = new Image().src='https://www3.securesync.com/keepalive.aspx?' + new Date().toString() + ';';
+			doKeepAlive = false;
+		}
+	}
+	
+	//Create callback - Set keepalive event to be triggered by server-side timeout value
+	var intervalID;
+	if (intervalID) {clearInterval(intervalID)}
+	intervalID = setInterval("header_doKeepAlive()", 588000);
+
+// KEEP ALIVE FUNCTIONALITY - END 
+
+</script>
+
+<table id="ucPageHeader_tblMenuLinks" border="0" style="height:20px;width:918px;">
+	<tr id="ucPageHeader_TableRow1" class="headerLink" align="right">
+		<td id="ucPageHeader_TableCell1"><a id="ucPageHeader_lnkHelp" class="headerLink" OnClick="window.open('https://www3.securesync.com/HelpAuditLogger.aspx','','resizable=yes,status=yes,toolbar=yes,menubar=yes,location=no,scrollbars=yes');return false;" href="%20">Resources</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="ucPageHeader_lnkContactUs" class="headerLink" OnClick="window.open('https://www3.securesync.com/contactus.aspx?lang=en-US','','status=no,toolbar=no,menubar=no,location=no,height=340,width=600');return false;" href="%20">Contact Us</a></td>
+	</tr>
+</table>
+<!-- 
+
+Image, Screen Name and Customer Controls
+
+-->
+<table width="918px">
+    <tr>
+        <td id="ucPageHeader_TD1" style="height: 58px; width: 285px;">
+            <img id="ucPageHeader_Image1" src="https://www3.securesync.com/images/headerApplicationLogo.gif" border="0" />
+        </td>
+
+        <td id="ucPageHeader_TD2" valign="middle" style="height: 58px; width: 628px;">
+            <table cellpadding="0" cellspacing="0" height="30" width="100%">
+                <tr valign="bottom">
+                    <td align="right" style="height: 27px; width: 626px;">
+                        <span id="ucPageHeader_spnMenuTitle" class="headerPageTitle">Login</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" style="width: 626px">
+                        <table style="width: 632px">
+                            <tr>
+                                <td class="headerCustomerNumber" align="right" style="width: 149px;" nowrap>
+                                    &nbsp;
+                                </td>
+                                <td class="headerCustomerNumber" align="left">
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+
+    </tr>
+</table>
+<!-- 
+
+Menu Buttons 
+
+-->
+<table id="ucPageHeader_tblMenuButtons" cellspacing="0" cellpadding="0" border="0" style="height:32px;width:918px;border-collapse:collapse;">
+	<tr id="ucPageHeader_trButtons">
+		<td style="background-color:SteelBlue;width:100%;"></td>
+	</tr>
+</table>
+<!-- 
+
+Debug Menu Table
+
+-->
+
+<!-- 
+
+JavaScript Menu Container
+
+-->
+
+<script language="javascript" src="https://www3.securesync.com/scripts/menuCommon.js"></script>
+<br />
+<span id="ucPageHeader_lblPagePrompt" class="prompt" style="width:918px;">Please enter your user name and password.</span>
+<!-- 
+
+Holder of page specific JavaScript 
+
+-->
+
+<BR>
+	<BR>
+	<BR>
+
+<form id="frmAccountSwitch" name="frmAccountSwitch" method="post" action="login.aspx">
+<input id="hidAccountSwitch" name="hidAccountSwitch" type="hidden" /></form>
+
+    <noscript>
+    <div class="prompt" style="color: red;height:40px">SecureSync requires JavaScript.<br />
+            Please enable Active scripting in the Security tab of Internet Options. </div>
+        </noscript><form name="frmValues" method="post" action="https://www3.securesync.com/login.aspx" id="frmValues">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="https://www3.securesync.com/wEPDwULLTIwOTE5OTc1MDAPZBYGZg9kFgpmD2QWAmYPZBYCZg9kFgoCAg8PFgIeB1Zpc2libGVoZGQCAw8WAh8AaGQCBg8PZBYCHgdPbkNsaWNrBXx3aW5kb3cub3BlbignY29udGFjdHVzLmFzcHg/bGFuZz1lbi1VUycsJycsJ3N0YXR1cz1ubyx0b29sYmFyPW5vLG1lbnViYXI9bm8sbG9jYXRpb249bm8saGVpZ2h0PTM0MCx3aWR0aD02MDAnKTtyZXR1cm4gZmFsc2U7ZAIHDxYCHwBoZAIIDw8WAh8AaGRkAgIPZBYGAgEPDxYCHgRUZXh0BQVMb2dpbmRkAgMPDxYCHwBoZGQCBQ8QFgweDURhdGFUZXh0RmllbGQFDURhdGFUZXh0RmllbGQeDkRhdGFWYWx1ZUZpZWxkBRNDdXN0b21lcl9BY2NvdW50X0lkHgtfIURhdGFCb3VuZGceCG9uY2hhbmdlBRRTd2l0Y2hBY2NvdW50KHRoaXMpOx4Jb2xkX3ZhbHVlBQEwHwBoEBUBHTgxNjM2LCBOQVNIIEZJTkNILCAoUmljaG1vbmQpFQEGWTgzMzk0FCsDAWcUKwEBZmQCBQ8PFgYeCENzc0NsYXNzBQZwcm9tcHQfAgUpUGxlYXNlIGVudGVyIHlvdXIgdXNlciBuYW1lIGFuZCBwYXNzd29yZC4eBF8hU0ICAmRkAgYPDxYCHwBoZGQCCA8WAh8AZ2QCAw9kFgICAw9kFgwCAQ8PZBYCHgVzdHlsZQUHY29sb3I6O2QCBQ8PFgweB0VuYWJsZWRoHhNDb250cm9sVG9Ob3RpZnlUeXBlCymOAUlyb25NdG4uQmFzZUNsYXNzMi5JTVdlYi5JTUJhc2VWYWxpZGF0b3IrTm90aWZpZXJDb250cm9sVHlwZSwgSXJvbk10bi5CYXNlQ2xhc3MyLCBWZXJzaW9uPTEuMC4yODc2LjIxMzQ4LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwAHhNOb3RpZmllckRpc3BsYXlOYW1lBQlVc2VyIE5hbWUeD0NvbnRyb2xUb05vdGlmeQULbGJsVXNlck5hbWUeCklzUmVxdWlyZWRnHhFDb250cm9sVG9WYWxpZGF0ZQULdHh0VXNlck5hbWVkZAIHDw9kFgIfCgUHY29sb3I6O2QCCw8PFgwfC2gfDAsrBAAfDQUIUGFzc3dvcmQfDgULbGJsUGFzc3dvcmQfD2cfEAULdHh0UGFzc3dvcmRkZAIRDxBkEBUDGEVuZ2xpc2ggKFVuaXRlZCBLaW5nZG9tKRdFbmdsaXNoIChVbml0ZWQgU3RhdGVzKRJGcmFuw6dhaXMgKENhbmFkYSkVAwVlbi1HQgVlbi1VUwVmci1DQRQrAwNnZ2cWAQIBZAIXDw8WAh8CBRsqIFRoaXMgaXMgYSByZXF1aXJlZCBmaWVsZC5kZAIED2QWAgIBD2QWAmYPZBYCZg9kFgRmDw8WAh8AaGRkAgEPEBYEHwYFF1N3aXRjaFJlcG9ydFR5cGUodGhpcyk7HwBoZBQrAQBkZMgDvPtrtnEzkgfrxjPbEqhBtYEG" />
+
+<script type="text/javascript">
+<!--
+var theForm = document.forms['frmValues'];
+if (!theForm) {
+    theForm = document.frmValues;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</script>
+
+
+<script src="https://www3.securesync.com//WebResource.axd?d=Cctwr95SC2b7bmhUcdLnhw2&amp;t=632990845594964823" type="text/javascript"></script>
+
+<script language='javascript' type='text/javascript'>function cancelPost(){var isIE= (navigator.appName.indexOf('Microsoft') != -1);if (isIE){window.event.returnValue = false;}else{e.preventDefault();}return false;}</script>   
+                    
+                    <div id="pnlControls">
+	
+                        <table id="Table1" width="918px">
+                            <tr>
+                                <td style="width: 140px">
+                                    <span id="lblUserName" style="color:;">User Name:*</span></td>
+                                <td colspan="2">
+                                    <input name="txtUserName" type="text" id="txtUserName" style="width:358px;" />
+                                    </td>
+                                <tr>
+                                    <td>
+                                        <span id="lblPassword" style="color:;">Password:*</span></td>
+                                    <td>
+                                        <input name="txtPassword" type="password" id="txtPassword" style="width:358px;" />
+                                        
+                                        <td>
+                                            &nbsp;
+                                            <a id="lbutForgotPassword" tabindex="-1" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;lbutForgotPassword&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Forgot your Password?</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 140px; height: 25px;">
+                                        <span id="lblCultures">Language:</span></td>
+                                    <td colspan="2" style="height: 21px">
+                                        <select name="drdLanguage" onchange="javascript:setTimeout('__doPostBack(\'drdLanguage\',\'\')', 0)" language="javascript" id="drdLanguage" style="width:358px;">
+		<option value="en-GB">English (United Kingdom)</option>
+		<option selected="selected" value="en-US">English (United States)</option>
+		<option value="fr-CA">Fran&#231;ais (Canada)</option>
+
+	</select>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="height: 40px">
+                                        <input language="javascript" onclick="prepForm(); if (typeof(Page_ClientValidate) == 'function') Page_ClientValidate(''); __doPostBack('butSubmit','')" name="butSubmit" type="button" id="butSubmit" class="buttonMedium" title="Keyboard: Alt-S" accesskey="S" value="Submit" />
+                                        <input language="javascript" onclick="prepForm(); if (typeof(Page_ClientValidate) == 'function') Page_ClientValidate(''); __doPostBack('butClear','')" name="butClear" type="button" id="butClear" class="buttonMedium" title="Keyboard: Alt-C" accesskey="C" value="Clear" /></td>
+                                </tr>
+                        </table>
+                        <table width="918px">
+                            <tr>
+                                <td style="height: 18px">
+                                    <span id="lblRequiredField">* This is a required field.</span></td>
+                            </tr>
+                        </table>
+                    
+</div>
+                
+<script language='javascript' src='https://www3.securesync.com/scripts/Resources/Shared_Strings.en-US.js' type='text/javascript'></script><script language='javascript' src='https://www3.securesync.com/scripts/Resources/FormValidator/FormValidator_Strings.en-US.js' type='text/javascript'></script><script language='javascript' src='https://www3.securesync.com/scripts/Resources/SSIECommonMoz/SSIECommonMoz_Strings.en-US.js' type='text/javascript'></script><script language='javascript' src='https://www3.securesync.com/scripts/Resources/FormValidatorMoz/FormValidatorMoz_Strings.en-US.js' type='text/javascript'></script></form>
+    <div class="footerDiv" id="divFooter">
+        
+
+<script language="javascript">
+
+	function SwitchReportType(select_control){
+		var sSelectedValue = select_control.options[select_control.selectedIndex].value;
+		//Same web server so switch accounts
+		var o = new Image().src='ReportTypeChange.aspx?ReportExportFormatId=' + sSelectedValue
+	}
+</script>
+
+<br />
+<span id="spnFooterSpacer"></span>
+<div id="popupcalendar">
+</div>
+<form id="frmReport" name="frmReport" method="post" action="report.aspx">
+    <input id="reportname" name="reportname" type="hidden">
+</form>
+<table id="Footer1_tblLogo" cellspacing="0" cellpadding="0" border="0" style="width:918px;border-collapse:collapse;">
+	<tr>
+		<td align="left"></td><td align="right"><img id="Footer1_imgIMLogo" src="https://www3.securesync.com/images/footerCompanyLogo.gif" border="0" /></td>
+	</tr>
+</table>
+<span id="spnFooter">
+    <table id="Footer1_tblFooterBar" cellspacing="0" cellpadding="0" border="0" style="width:918px;border-collapse:collapse;">
+	<tr style="background-color:SteelBlue;">
+		<td class="copyrightText">&nbsp;Copyright © 1996-2007 Iron Mountain Incorporated. All rights reserved.</td>
+	</tr>
+</table>
+</span>
+
+<script language="JavaScript">
+  positionFooter();
+  function positionFooter(){
+    // Move the footer to at least the minimum standard top.
+    // It is welcome to be below that, in which case do nothing.
+    var iStdFooterTop = 385;
+    
+    while(getFooterOffsetTop(document.getElementById('spnFooter')) < iStdFooterTop){
+      document.getElementById('spnFooterSpacer').innerHTML += '<BR>';
+    }
+  }
+  
+  function getFooterOffsetTop (el) {
+    var ot = el.offsetTop;
+    while((el = el.offsetParent) != null)
+        ot += el.offsetTop;
+    return ot;
+  }
+</script>
+
+
+    </div>
+    <img style="position: absolute; top: -100px" height="6" src="images/BulletRed.gif"
+        width="6">
+</body>
+</html>

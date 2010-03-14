@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<snRules>
+  
+  <snRuleName>DLT</snRuleName>
+  <snRuleTextLength>6</snRuleTextLength>
+  <snRegExPattern>(A|M)\d{5}</snRegExPattern>
+
+  <snRuleName>EDI-LTO</snRuleName>
+  <snRuleTextLength>6</snRuleTextLength>
+  <snRegExPattern>NF\d{4}</snRegExPattern>
+
+  <snRuleName>EDI-Label</snRuleName>
+  <snRuleTextLength>5</snRuleTextLength>
+  <snRegExPattern>E\d{4}</snRegExPattern>
+
+  <snRuleName>System</snRuleName>
+  <snRuleTextLength>5</snRuleTextLength>
+  <snRegExPattern>S\d{4}</snRegExPattern>
+  
+</snRules>

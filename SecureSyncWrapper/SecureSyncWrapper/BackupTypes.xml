@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BackupTypes>
+  
+  <BackupTypeName>Primary Audits</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>DLT</SN_Format>
+  </ValidSN_Formats>
+
+  <BackupTypeName>Secondary Audits</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>DLT</SN_Format>
+  </ValidSN_Formats>
+
+  <BackupTypeName>Midday Backup</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>DLT</SN_Format>
+  </ValidSN_Formats>
+
+  <BackupTypeName>Nightly Backup</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>DLT</SN_Format>
+  </ValidSN_Formats>
+
+  <BackupTypeName>Payroll Backup</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>DLT</SN_Format>
+  </ValidSN_Formats>
+
+  <BackupTypeName>Weekly Backup</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>DLT</SN_Format>
+  </ValidSN_Formats>
+
+  <BackupTypeName>System Backup</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>System</SN_Format>
+  </ValidSN_Formats>
+
+  <BackupTypeName>EDI Backup</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>EDI-LTO</SN_Format>
+    <SN_Format>EDI-Label</SN_Format>
+  </ValidSN_Formats>
+
+  <BackupTypeName>EDI Archive</BackupTypeName>
+  <ValidSN_Formats>
+    <SN_Format>EDI-Label</SN_Format>
+  </ValidSN_Formats>
+  
+</BackupTypes>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SecureSyncWrapper
+</name>
+</assembly>
+<members>
+<member name="F:SecureSyncWrapper.editFormClass.dataHandlerClassName">
+	<summary>
+ Specify a seperate DataHandlerClass and its corresponding methods and parameters to
+ display or update data via Windows Form Controls.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SecureSyncWrapper.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SecureSyncWrapper.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:SecureSyncWrapper.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:SecureSyncWrapper.TapeDataHandlerClass.ControlInterface(SecureSyncWrapper.TapeDataHandlerClass.Fill,System.Windows.Forms.ComboBox@)">
+	<summary>
+ Convenience method to fill a ComboBox with all currently existing backupTypes or snRules.
+ Also includes a "New..." item at top to facilitate adding backupTypes or snRules respectively.
+ </summary>
+	<param name="DataToFillControlWith"></param>
+	<param name="NameofComboBox"></param>
+	<remarks></remarks>
+</member><member name="M:SecureSyncWrapper.TapeDataHandlerClass.ControlInterface(SecureSyncWrapper.TapeDataHandlerClass.Fill,System.Windows.Forms.ListBox@)">
+	<summary>
+ Convenience method to fill a ListBox with all currently existing backupTypes or snRules.
+ Also includes a "New..." item at top to facilitate adding backupTypes or snRules respectively.
+ </summary>
+	<param name="DataToFillControlWith"></param>
+	<param name="NameofListBox"></param>
+	<remarks></remarks>
+</member><member name="M:SecureSyncWrapper.TapeDataHandlerClass.ControlInterface(SecureSyncWrapper.TapeDataHandlerClass.AddUpdate,System.String,System.Windows.Forms.ListBox@)">
+	<summary>
+ Interface for adding or updating backupTypes.
+ Abstracts the lower-level direct adding or updating of backupTypes.
+ </summary>
+	<param name="DataThatControlWillUpdate"></param>
+	<param name="BackupTypeName"></param>
+	<param name="NameOfSNRulesListBox"></param>
+	<remarks></remarks>
+</member><member name="M:SecureSyncWrapper.TapeDataHandlerClass.ControlInterface(SecureSyncWrapper.TapeDataHandlerClass.Selection,System.String,System.Windows.Forms.ListBox@)">
+	<summary>
+ Convenience method for selecting corresponding snRules in a ListBox based on backupTypeName given.
+ </summary>
+	<param name="DataThatControlWillSelect"></param>
+	<param name="BackupTypeName"></param>
+	<param name="NameOfSNRulesListBox"></param>
+	<remarks></remarks>
+</member><member name="T:SecureSyncWrapper.TapeDataHandlerClass">
+	<summary>
+ Keeps track of all data processes (data integrity, adds, updates, and deletes)
+ This class instantiates subclasses of ComboBoxInterfaceClass and ListBoxInterfaceClass
+ These are defined in TapeDataHandlerInterfaceClasses.vb
+ 
+ FileIO processes are defined in TapeDataHandlerFileIO.vb which is part of this class
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SecureSyncWrapper.TapeDataTypes.BackupTypeStruct.DefaultReturnDateType">
+	<summary>
+ Gets or Sets the Default Return Date Type
+ </summary>
+	<value>ReturnDateType Constant</value>
+	<returns>
+ ReturnDateType Constant representing type of Return Date</returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

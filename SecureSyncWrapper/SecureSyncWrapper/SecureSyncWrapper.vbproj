@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A4EBEB7-FBA9-4CF2-AA3B-0558F7F22ABA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SecureSyncWrapper.My.MyApplication</StartupObject>
+    <RootNamespace>SecureSyncWrapper</RootNamespace>
+    <AssemblyName>SecureSyncWrapper</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SecureSyncWrapper.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SecureSyncWrapper.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="backupTypeEditForm.Designer.vb">
+      <DependentUpon>backupTypeEditForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="backupTypeEditForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataHandlerObjectLinker.Designer.vb">
+      <DependentUpon>DataHandlerObjectLinker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataHandlerObjectLinker.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="editFormClass.Designer.vb">
+      <DependentUpon>editFormClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editFormClass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editFormTemplate.Designer.vb">
+      <DependentUpon>editFormTemplate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editFormTemplate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FillMethodProvider.Designer.vb">
+      <DependentUpon>FillMethodProvider.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FillMethodProvider.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TapeDataHandlerControlInterfaces.vb" />
+    <Compile Include="LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="snRuleEditForm.Designer.vb">
+      <DependentUpon>snRuleEditForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="snRuleEditForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScanForm.Designer.vb">
+      <DependentUpon>ScanForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScanForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="snValidatorClass.vb" />
+    <Compile Include="StartupForm.Designer.vb">
+      <DependentUpon>StartupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StartupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TapeDataHandlerClass.vb" />
+    <Compile Include="TapeDataHandlerFileIO.vb" />
+    <Compile Include="TapeDataTypes.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="backupTypeEditForm.resx">
+      <DependentUpon>backupTypeEditForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editFormClass.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>editFormClass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editFormTemplate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>editFormTemplate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="snRuleEditForm.resx">
+      <DependentUpon>snRuleEditForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScanForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScanForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartupForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StartupForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
